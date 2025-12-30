@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Saad - Professional Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6d28d9;
+            --secondary-color: #db2777;
+            --accent-color: #059669;
+            --light-color: #f8fafc;
+            --dark-color: #1e293b;
+            --orange-color: #f97316;
+            --purple-light: #8b5cf6;
+            --pink-light: #f472b6;
+            --green-light: #10b981;
+            --shadow-color: rgba(109, 40, 217, 0.1);
+            --gradient-primary: linear-gradient(135deg, #6d28d9 0%, #db2777 100%);
+            --gradient-secondary: linear-gradient(135deg, #059669 0%, #f97316 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            position: relative;
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 5px;
+            background: var(--gradient-secondary);
+            border-radius: 3px;
+        }
+
+        h3 {
+            font-size: 1.6rem;
+            color: var(--primary-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 90px 0;
+        }
+
+        .bg-light {
+            background-color: #f8fafc;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px var(--shadow-color);
+            border-bottom: 2px solid transparent;
+            border-image: var(--gradient-primary);
+            border-image-slice: 1;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo i {
+            margin-right: 8px;
+            color: var(--secondary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 35px;
+        }
+
+        .nav-links a {
+            color: var(--dark-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s;
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+            transition: width 0.3s;
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 160px;
+            padding-bottom: 120px;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(219, 39, 119, 0.1) 0%, rgba(219, 39, 119, 0) 70%);
+            z-index: 0;
+        }
+
+        .hero:after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(109, 40, 217, 0.1) 0%, rgba(109, 40, 217, 0) 70%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-img {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(109, 40, 217, 0.2);
+            border: 5px solid white;
+            position: relative;
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: all 0.5s;
+        }
+
+        .profile-img:hover {
+            transform: perspective(1000px) rotateY(0deg);
+            box-shadow: 0 25px 50px rgba(109, 40, 217, 0.3);
+        }
+
+        .profile-img:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text p {
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            color: #475569;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(109, 40, 217, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: var(--gradient-secondary);
+            transition: width 0.3s;
+            z-index: -1;
+        }
+
+        .btn:hover:before {
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(109, 40, 217, 0.4);
+        }
+
+        .btn i {
+            margin-left: 10px;
+            transition: transform 0.3s;
+        }
+
+        .btn:hover i {
+            transform: translateX(5px);
+        }
+
+        /* TechXcape Section */
+        .techxcape-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .techxcape-intro {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .techxcape-intro h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .techxcape-intro p {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .techxcape-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .techxcape-description {
+            background: var(--light-color);
+            padding: 40px;
+            border-radius: 15px;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .techxcape-description h3 {
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .techxcape-description p {
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .techxcape-services {
+            list-style: none;
+            margin: 25px 0;
+            columns: 2;
+        }
+
+        .techxcape-services li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+            color: #444;
+        }
+
+        .techxcape-services li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .techxcape-website {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .techxcape-website:hover {
+            border-color: var(--primary-color);
+        }
+
+        .techxcape-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .techxcape-stat {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px var(--shadow-color);
+            border-top: 5px solid var(--secondary-color);
+            transition: all 0.3s;
+        }
+
+        .techxcape-stat:nth-child(2) {
+            border-top-color: var(--orange-color);
+        }
+
+        .techxcape-stat:nth-child(3) {
+            border-top-color: var(--purple-light);
+        }
+
+        .techxcape-stat:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 35px rgba(109, 40, 217, 0.15);
+        }
+
+        .techxcape-stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: block;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .techxcape-stat-text {
+            font-size: 1.2rem;
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+        }
+
+        .qualifications-list {
+            list-style: none;
+            margin-top: 25px;
+        }
+
+        .qualifications-list li {
+            margin-bottom: 18px;
+            padding-left: 35px;
+            position: relative;
+            font-size: 1.05rem;
+        }
+
+        .qualifications-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.3rem;
+            width: 28px;
+            height: 28px;
+            background: rgba(5, 150, 105, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .stat-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px var(--shadow-color);
+            border-top: 5px solid var(--secondary-color);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-box:nth-child(2) {
+            border-top-color: var(--accent-color);
+        }
+
+        .stat-box:nth-child(3) {
+            border-top-color: var(--orange-color);
+        }
+
+        .stat-box:nth-child(4) {
+            border-top-color: var(--purple-light);
+        }
+
+        .stat-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 35px rgba(109, 40, 217, 0.15);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: block;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .stat-text {
+            font-size: 1.05rem;
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+
+        /* Experience Section */
+        .experience-item {
+            background-color: white;
+            padding: 35px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px var(--shadow-color);
+            border-left: 6px solid var(--secondary-color);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-item:nth-child(2) {
+            border-left-color: var(--accent-color);
+        }
+
+        .experience-item:nth-child(3) {
+            border-left-color: var(--orange-color);
+        }
+
+        .experience-item:nth-child(4) {
+            border-left-color: var(--purple-light);
+        }
+
+        .experience-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 15px 30px rgba(109, 40, 217, 0.2);
+        }
+
+        .experience-item h3 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .experience-year {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(109, 40, 217, 0.3);
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: white;
+            box-shadow: 0 10px 25px var(--shadow-color);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-8px);
+            border-color: var(--secondary-color);
+            box-shadow: 0 15px 30px rgba(219, 39, 119, 0.15);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .contact-link:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark-color) 0%, #0f172a 100%);
+            color: white;
+            padding: 60px 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-primary);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .social-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .social-links li {
+            margin-left: 15px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.3rem;
+            transition: all 0.3s;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-links a:nth-child(1):hover {
+            background: var(--gradient-primary);
+            transform: translateY(-5px);
+        }
+
+        .social-links a:nth-child(2):hover {
+            background: var(--gradient-secondary);
+            transform: translateY(-5px);
+        }
+
+        .social-links a:nth-child(3):hover {
+            background: linear-gradient(135deg, var(--orange-color), var(--secondary-color));
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-content, .about-content, .contact-info, .techxcape-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-img {
+                max-width: 500px;
+                margin: 0 auto;
+                order: -1;
+            }
+            
+            .hero-text {
+                text-align: center;
+            }
+            
+            h2:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .techxcape-services {
+                columns: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-wrap: wrap;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                margin-top: 20px;
+                padding-bottom: 20px;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .social-links {
+                margin-top: 30px;
+            }
+            
+            .social-links li:first-child {
+                margin-left: 0;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .section-padding {
+                padding: 70px 0;
+            }
+            
+            .hero {
+                padding-top: 140px;
+            }
+            
+            .techxcape-intro h2 {
+                font-size: 2rem;
+            }
+            
+            .techxcape-intro p {
+                font-size: 1.1rem;
+            }
+            
+            .techxcape-stat-number {
+                font-size: 2.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo"><i class="fas fa-user-tie"></i>Ahmed <span>Saad</span></a>
+                <div class="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#techxcape">TechXcape</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Ahmed Saad</h1>
+                    <h2>Finance Executive & Educator</h2>
+                    <p>Associate Member of ICAP, Fellow Member of PIPFA, and seasoned professional with over 18 years of experience in financial leadership, advisory, and education.</p>
+                    <a href="mailto:ahmadsaad@hrstotal.com" class="btn">Get In Touch <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="profile-img">
+                    <!-- Dummy profile image -->
+                    <img src="sliderimg.png" alt="Ahmed Saad">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <h2>Professional Profile</h2>
+            <div class="about-content">
+                <div>
+                    <p>Highly accomplished finance professional with a distinguished career spanning over 18 years in leadership roles across various industries. Combines expertise in corporate finance, public finance, and education with a passion for developing future professionals.</p>
+                    
+                    <h3>Qualifications</h3>
+                    <ul class="qualifications-list">
+                        <li>Associate Member, Institute of Chartered Accountants of Pakistan</li>
+                        <li>Fellow Member, Pakistan Institute of Public Finance Accountants</li>
+                        <li>Masters in Economics (M.A.) – Position Holder</li>
+                        <li>Bachelors in Commerce (B.Com.) – Position Holder</li>
+                        <li>Bachelors in Science (B.Sc.)</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <div class="stats">
+                        <div class="stat-box">
+                            <span class="stat-number">18+</span>
+                            <span class="stat-text">Years Professional Experience</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-text">Years Teaching Experience</span>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 30px;">
+                        <h3>Achievements</h3>
+                        <ul class="qualifications-list">
+                            <li>Founder of HRS Network (Pakistan's 1st network of business entities) - 2010</li>
+                            <li>Principal / Director Professional Qualifications – CAMS</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section-padding bg-light">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <h3>Group Director / CFO / Advisor <span class="experience-year">Various Tenures</span></h3>
+                <p>Provided strategic financial leadership to various reputed companies across multiple industries. Responsibilities included financial planning, risk management, financial reporting, and driving business growth through sound financial strategies.</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Principal / Director Professional Qualifications – CAMS <span class="experience-year">Current</span></h3>
+                <p>Leading professional qualification programs with a focus on Certified Anti-Money Laundering Specialist (CAMS) certification. Developing curriculum and training future professionals in compliance and financial crime prevention.</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Founder, HRS Network <span class="experience-year">2010 - Present</span></h3>
+                <p>Established Pakistan's first network of business entities, creating a platform for collaboration, knowledge sharing, and business development among professionals and organizations across various sectors.</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Educator & Trainer <span class="experience-year">10+ Years</span></h3>
+                <p>Over a decade of experience in teaching and mentoring finance professionals, sharing expertise in accounting, finance, economics, and professional qualification preparation with students and practitioners.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- TechXcape Section -->
+    <section id="techxcape" class="techxcape-section">
+        <div class="container">
+            <div class="techxcape-intro">
+                <h2>Helping Brands Reach Full Potential</h2>
+                <p>Over 23+ Years of Helping Brands to Reach Full Potential</p>
+            </div>
+            
+            <div class="techxcape-content">
+                <div class="techxcape-description">
+                    <h3>TechXcape - System Development Division</h3>
+                    <p>System Development Division of HRS Network which is branded as <a href="https://techxcape.com" target="_blank" class="techxcape-website">"TechXcape" techxcape.com</a> is a distinctive part of HRS Network. We provide comprehensive advisory and support in the development of Software, Web based Applications and Mobile Applications specifically according to the customized requirements of clients.</p>
+                    
+                    <p>TechXcape also helps businesses in their brand development including but not limited to:</p>
+                    
+                    <ul class="techxcape-services">
+                        <li>Website Designing</li>
+                        <li>Website Development</li>
+                        <li>Graphics</li>
+                        <li>Videography</li>
+                        <li>Animations</li>
+                        <li>Digital Marketing</li>
+                        <li>Other technological solutions</li>
+                    </ul>
+                </div>
+                
+                <div class="techxcape-stats">
+                    <div class="techxcape-stat">
+                        <span class="techxcape-stat-number">450+</span>
+                        <span class="techxcape-stat-text">Happy Clients</span>
+                    </div>
+                    
+                    <div class="techxcape-stat">
+                        <span class="techxcape-stat-number">750+</span>
+                        <span class="techxcape-stat-text">Projects Delivered</span>
+                    </div>
+                    
+                    <div class="techxcape-stat">
+                        <span class="techxcape-stat-number">23+</span>
+                        <span class="techxcape-stat-text">Years of Excellence</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-info">
+                <div>
+                    <h3>Connect with Ahmed Saad</h3>
+                    <p>For professional inquiries, speaking engagements, or consultation services, please reach out through the following channels:</p>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:ahmadsaad@hrstotal.com" class="contact-link">ahmadsaad@hrstotal.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </div>
+                        <div>
+                            <h4>Facebook</h4>
+                            <p><a href="https://www.facebook.com/ahmadsaad.pk" target="_blank" class="contact-link">www.facebook.com/ahmadsaad.pk</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div>
+                            <h4>Professional Network</h4>
+                            <p>HRS Network - Pakistan's 1st network of business entities</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>Areas of Expertise</h3>
+                    <ul class="qualifications-list">
+                        <li>Corporate Financial Management</li>
+                        <li>Public Finance & Accounting</li>
+                        <li>Professional Education & Training</li>
+                        <li>Business Networking & Development</li>
+                        <li>Financial Compliance & AML</li>
+                        <li>Strategic Advisory</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3 style="color: white;">Ahmed Saad</h3>
+                    <p>Finance Executive | Educator | Founder</p>
+                    <p style="margin-top: 15px; color: rgba(255,255,255,0.8);">
+                        <i class="fas fa-envelope" style="margin-right: 10px; color: #f472b6;"></i>
+                        ahmadsaad@hrstotal.com
+                    </p>
+                </div>
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com/ahmadsaad.pk" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="mailto:ahmadsaad@hrstotal.com"><i class="fas fa-envelope"></i></a></li>
+                </ul>
+            </div>
+            <div class="copyright">
+                <p>&copy; Ahmed Saad. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            this.querySelector('i').classList.toggle('fa-bars');
+            this.querySelector('i').classList.toggle('fa-times');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    // Close mobile menu if open
+                    document.querySelector('.nav-links').classList.remove('active');
+                    document.querySelector('.mobile-toggle i').classList.remove('fa-times');
+                    document.querySelector('.mobile-toggle i').classList.add('fa-bars');
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header background on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            }
+        });
+        
+        // Add animation to stats when they come into view
+        const observerOptions = {
+            threshold: 0.5
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    const statBoxes = entry.target.querySelectorAll('.stat-box');
+                    statBoxes.forEach((box, index) => {
+                        setTimeout(() => {
+                            box.style.opacity = '1';
+                            box.style.transform = 'translateY(0)';
+                        }, index * 200);
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        // Observe the about section
+        const aboutSection = document.getElementById('about');
+        if(aboutSection) {
+            observer.observe(aboutSection);
+        }
+        
+        // Add animation for TechXcape stats
+        const techxcapeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    const stats = entry.target.querySelectorAll('.techxcape-stat');
+                    stats.forEach((stat, index) => {
+                        setTimeout(() => {
+                            stat.style.opacity = '1';
+                            stat.style.transform = 'translateY(0)';
+                        }, index * 300);
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        const techxcapeSection = document.getElementById('techxcape');
+        if(techxcapeSection) {
+            techxcapeObserver.observe(techxcapeSection);
+        }
+    </script>
+</body>
+</html>
